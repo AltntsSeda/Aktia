@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.5 on win32)" generated="20220707 14:14:46.157" rpa="false" schemaversion="2">
+<suite id="s1" name="PositiveScenerios" source="C:\Users\Seda\PycharmProjects\Aktia\TestCases\PositiveScenerios.robot">
+<test id="s1-t1" name="Implement Positive Scenerios">
+<kw name="Open Browser and Setup" library="Resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220707 14:14:50.017" level="INFO">Opening browser 'Chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<status status="PASS" starttime="20220707 14:14:50.016" endtime="20220707 14:15:01.576"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220707 14:15:01.577" endtime="20220707 14:15:01.916"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>${time_out}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220707 14:15:01.916" endtime="20220707 14:15:01.940"/>
+</kw>
+<kw name="Click Element When Visible" library="Resources">
+<arg>${accept_cookies}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<arg>${time_out}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220707 14:15:01.943" endtime="20220707 14:15:02.230"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>scroll element into view</arg>
+<arg>${argument_locater}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 14:15:02.232" endtime="20220707 14:15:02.584"/>
+</kw>
+<status status="PASS" starttime="20220707 14:15:02.231" endtime="20220707 14:15:02.584"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220707 14:15:02.586" level="INFO">Simulating Mouse Over on element '//*[contains(text(),'Hyväksy kaikki evästeet')]'.</msg>
+<status status="PASS" starttime="20220707 14:15:02.585" endtime="20220707 14:15:02.999"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220707 14:15:03.000" endtime="20220707 14:15:04.429"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220707 14:15:04.433" level="INFO">Clicking element '//*[contains(text(),'Hyväksy kaikki evästeet')]'.</msg>
+<status status="PASS" starttime="20220707 14:15:04.430" endtime="20220707 14:15:04.783"/>
+</kw>
+<status status="PASS" starttime="20220707 14:15:01.941" endtime="20220707 14:15:04.785"/>
+</kw>
+<kw name="Click Element If Visible" library="Resources">
+<arg>${close_chatbox}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220707 14:15:04.788" endtime="20220707 14:15:04.792"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${count}</var>
+<arg>${argument_element}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220707 14:15:05.812" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20220707 14:15:04.792" endtime="20220707 14:15:05.812"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} &gt; 0">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${argument_element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220707 14:15:05.813" endtime="20220707 14:15:05.814"/>
+</kw>
+<status status="NOT RUN" starttime="20220707 14:15:05.813" endtime="20220707 14:15:05.814"/>
+</branch>
+<status status="PASS" starttime="20220707 14:15:05.812" endtime="20220707 14:15:05.814"/>
+</if>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>${time_out}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220707 14:15:05.814" endtime="20220707 14:15:05.816"/>
+</kw>
+<status status="PASS" starttime="20220707 14:15:04.786" endtime="20220707 14:15:05.817"/>
+</kw>
+<status status="PASS" starttime="20220707 14:14:50.015" endtime="20220707 14:15:05.817"/>
+</kw>
+<kw name="Verify Reference Number">
+<arg>123</arg>
+<kw name="Provide Reference Number" library="Resources">
+<arg>${base_number}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${reference_number_base}</arg>
+<arg>${base_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220707 14:15:05.819" level="INFO">Typing text '123' into text field '//*[@name='referenceNumberBase']'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220707 14:15:16.222" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220707 14:15:15.894" endtime="20220707 14:15:16.222"/>
+</kw>
+<msg timestamp="20220707 14:15:16.232" level="FAIL">Element with locator '//*[@name='referenceNumberBase']' not found.</msg>
+<status status="FAIL" starttime="20220707 14:15:05.819" endtime="20220707 14:15:16.233"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>${reference_number_dropdown}</arg>
+<arg>2</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="NOT RUN" starttime="20220707 14:15:16.234" endtime="20220707 14:15:16.235"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220707 14:15:16.236" endtime="20220707 14:15:16.237"/>
+</kw>
+<kw name="Click Element If Visible" library="Resources">
+<arg>${close_chatbox}</arg>
+<status status="NOT RUN" starttime="20220707 14:15:16.238" endtime="20220707 14:15:16.238"/>
+</kw>
+<kw name="Click Element When Visible" library="Resources">
+<arg>${kansainvalinen_viitenumero}</arg>
+<status status="NOT RUN" starttime="20220707 14:15:16.239" endtime="20220707 14:15:16.240"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220707 14:15:16.241" endtime="20220707 14:15:16.241"/>
+</kw>
+<kw name="Click Element If Visible" library="Resources">
+<arg>${close_chatbox}</arg>
+<status status="NOT RUN" starttime="20220707 14:15:16.241" endtime="20220707 14:15:16.241"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220707 14:15:16.242" endtime="20220707 14:15:16.242"/>
+</kw>
+<kw name="Click Element When Visible" library="Resources">
+<arg>${laske}</arg>
+<status status="NOT RUN" starttime="20220707 14:15:16.242" endtime="20220707 14:15:16.242"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:15:05.818" endtime="20220707 14:15:16.244"/>
+</kw>
+<kw name="Get Provided Reference Number as List" library="Resources">
+<status status="NOT RUN" starttime="20220707 14:15:16.244" endtime="20220707 14:15:16.244"/>
+</kw>
+<kw name="Configure Reference Number Format as Described" library="Resources">
+<status status="NOT RUN" starttime="20220707 14:15:16.245" endtime="20220707 14:15:16.245"/>
+</kw>
+<kw name="Verify Reference Number from List" library="Resources">
+<status status="NOT RUN" starttime="20220707 14:15:16.245" endtime="20220707 14:15:16.245"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:15:05.818" endtime="20220707 14:15:16.246"/>
+</kw>
+<kw name="Teardown" library="Resources" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 14:15:21.270" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220707 14:15:16.254" endtime="20220707 14:15:21.270"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220707 14:15:21.271" endtime="20220707 14:15:23.448"/>
+</kw>
+<status status="PASS" starttime="20220707 14:15:16.253" endtime="20220707 14:15:23.449"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:14:50.007" endtime="20220707 14:15:23.450">Element with locator '//*[@name='referenceNumberBase']' not found.</status>
+</test>
+<test id="s1-t2" name="Implement Positive Scenerios">
+<kw name="Open Browser and Setup" library="Resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220707 14:15:23.494" level="INFO">Opening browser 'Chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<status status="PASS" starttime="20220707 14:15:23.492" endtime="20220707 14:15:31.898"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220707 14:15:31.898" endtime="20220707 14:15:32.315"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>${time_out}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220707 14:15:32.316" endtime="20220707 14:15:32.329"/>
+</kw>
+<kw name="Click Element When Visible" library="Resources">
+<arg>${accept_cookies}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<arg>${time_out}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220707 14:15:32.331" endtime="20220707 14:15:32.622"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>scroll element into view</arg>
+<arg>${argument_locater}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 14:15:32.628" endtime="20220707 14:15:33.457"/>
+</kw>
+<status status="PASS" starttime="20220707 14:15:32.625" endtime="20220707 14:15:33.457"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220707 14:15:33.459" level="INFO">Simulating Mouse Over on element '//*[contains(text(),'Hyväksy kaikki evästeet')]'.</msg>
+<status status="PASS" starttime="20220707 14:15:33.457" endtime="20220707 14:15:33.823"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220707 14:15:33.824" endtime="20220707 14:15:33.837"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220707 14:15:33.838" level="INFO">Clicking element '//*[contains(text(),'Hyväksy kaikki evästeet')]'.</msg>
+<status status="PASS" starttime="20220707 14:15:33.837" endtime="20220707 14:15:33.907"/>
+</kw>
+<status status="PASS" starttime="20220707 14:15:32.329" endtime="20220707 14:15:33.908"/>
+</kw>
+<kw name="Click Element If Visible" library="Resources">
+<arg>${close_chatbox}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220707 14:15:33.910" endtime="20220707 14:15:33.923"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${count}</var>
+<arg>${argument_element}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220707 14:15:35.050" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20220707 14:15:33.923" endtime="20220707 14:15:35.050"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} &gt; 0">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${argument_element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220707 14:15:35.051" endtime="20220707 14:15:35.051"/>
+</kw>
+<status status="NOT RUN" starttime="20220707 14:15:35.051" endtime="20220707 14:15:35.051"/>
+</branch>
+<status status="PASS" starttime="20220707 14:15:35.050" endtime="20220707 14:15:35.051"/>
+</if>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>${time_out}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220707 14:15:35.051" endtime="20220707 14:15:35.052"/>
+</kw>
+<status status="PASS" starttime="20220707 14:15:33.908" endtime="20220707 14:15:35.053"/>
+</kw>
+<status status="PASS" starttime="20220707 14:15:23.487" endtime="20220707 14:15:35.053"/>
+</kw>
+<kw name="Verify Reference Number">
+<arg>123456</arg>
+<kw name="Provide Reference Number" library="Resources">
+<arg>${base_number}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${reference_number_base}</arg>
+<arg>${base_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220707 14:15:35.054" level="INFO">Typing text '123456' into text field '//*[@name='referenceNumberBase']'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220707 14:15:45.321" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220707 14:15:45.077" endtime="20220707 14:15:45.321"/>
+</kw>
+<msg timestamp="20220707 14:15:45.323" level="FAIL">Element with locator '//*[@name='referenceNumberBase']' not found.</msg>
+<status status="FAIL" starttime="20220707 14:15:35.054" endtime="20220707 14:15:45.324"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>${reference_number_dropdown}</arg>
+<arg>2</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="NOT RUN" starttime="20220707 14:15:45.325" endtime="20220707 14:15:45.325"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220707 14:15:45.325" endtime="20220707 14:15:45.325"/>
+</kw>
+<kw name="Click Element If Visible" library="Resources">
+<arg>${close_chatbox}</arg>
+<status status="NOT RUN" starttime="20220707 14:15:45.325" endtime="20220707 14:15:45.325"/>
+</kw>
+<kw name="Click Element When Visible" library="Resources">
+<arg>${kansainvalinen_viitenumero}</arg>
+<status status="NOT RUN" starttime="20220707 14:15:45.325" endtime="20220707 14:15:45.325"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220707 14:15:45.326" endtime="20220707 14:15:45.326"/>
+</kw>
+<kw name="Click Element If Visible" library="Resources">
+<arg>${close_chatbox}</arg>
+<status status="NOT RUN" starttime="20220707 14:15:45.326" endtime="20220707 14:15:45.327"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220707 14:15:45.327" endtime="20220707 14:15:45.327"/>
+</kw>
+<kw name="Click Element When Visible" library="Resources">
+<arg>${laske}</arg>
+<status status="NOT RUN" starttime="20220707 14:15:45.327" endtime="20220707 14:15:45.327"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:15:35.053" endtime="20220707 14:15:45.330"/>
+</kw>
+<kw name="Get Provided Reference Number as List" library="Resources">
+<status status="NOT RUN" starttime="20220707 14:15:45.330" endtime="20220707 14:15:45.331"/>
+</kw>
+<kw name="Configure Reference Number Format as Described" library="Resources">
+<status status="NOT RUN" starttime="20220707 14:15:45.331" endtime="20220707 14:15:45.331"/>
+</kw>
+<kw name="Verify Reference Number from List" library="Resources">
+<status status="NOT RUN" starttime="20220707 14:15:45.331" endtime="20220707 14:15:45.332"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:15:35.053" endtime="20220707 14:15:45.333"/>
+</kw>
+<kw name="Teardown" library="Resources" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 14:15:50.346" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220707 14:15:45.336" endtime="20220707 14:15:50.347"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220707 14:15:50.348" endtime="20220707 14:15:53.947"/>
+</kw>
+<status status="PASS" starttime="20220707 14:15:45.334" endtime="20220707 14:15:53.948"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:15:23.459" endtime="20220707 14:15:53.948">Element with locator '//*[@name='referenceNumberBase']' not found.</status>
+</test>
+<test id="s1-t3" name="Implement Positive Scenerios">
+<kw name="Open Browser and Setup" library="Resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220707 14:15:53.953" level="INFO">Opening browser 'Chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<status status="PASS" starttime="20220707 14:15:53.953" endtime="20220707 14:16:04.104"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220707 14:16:04.105" endtime="20220707 14:16:04.422"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>${time_out}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220707 14:16:04.423" endtime="20220707 14:16:04.434"/>
+</kw>
+<kw name="Click Element When Visible" library="Resources">
+<arg>${accept_cookies}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<arg>${time_out}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220707 14:16:04.438" endtime="20220707 14:16:04.687"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>scroll element into view</arg>
+<arg>${argument_locater}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220707 14:16:04.690" endtime="20220707 14:16:05.104"/>
+</kw>
+<status status="PASS" starttime="20220707 14:16:04.687" endtime="20220707 14:16:05.105"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220707 14:16:05.106" level="INFO">Simulating Mouse Over on element '//*[contains(text(),'Hyväksy kaikki evästeet')]'.</msg>
+<status status="PASS" starttime="20220707 14:16:05.105" endtime="20220707 14:16:06.125"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220707 14:16:06.126" endtime="20220707 14:16:06.286"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${argument_locater}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220707 14:16:06.288" level="INFO">Clicking element '//*[contains(text(),'Hyväksy kaikki evästeet')]'.</msg>
+<status status="PASS" starttime="20220707 14:16:06.286" endtime="20220707 14:16:06.686"/>
+</kw>
+<status status="PASS" starttime="20220707 14:16:04.435" endtime="20220707 14:16:06.686"/>
+</kw>
+<kw name="Click Element If Visible" library="Resources">
+<arg>${close_chatbox}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220707 14:16:06.688" endtime="20220707 14:16:06.695"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${count}</var>
+<arg>${argument_element}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220707 14:16:07.759" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20220707 14:16:06.698" endtime="20220707 14:16:07.759"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} &gt; 0">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${argument_element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220707 14:16:07.760" endtime="20220707 14:16:07.760"/>
+</kw>
+<status status="NOT RUN" starttime="20220707 14:16:07.760" endtime="20220707 14:16:07.760"/>
+</branch>
+<status status="PASS" starttime="20220707 14:16:07.759" endtime="20220707 14:16:07.760"/>
+</if>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>${time_out}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220707 14:16:07.760" endtime="20220707 14:16:07.762"/>
+</kw>
+<status status="PASS" starttime="20220707 14:16:06.687" endtime="20220707 14:16:07.762"/>
+</kw>
+<status status="PASS" starttime="20220707 14:15:53.952" endtime="20220707 14:16:07.763"/>
+</kw>
+<kw name="Verify Reference Number">
+<arg>1525458596</arg>
+<kw name="Provide Reference Number" library="Resources">
+<arg>${base_number}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${reference_number_base}</arg>
+<arg>${base_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220707 14:16:07.766" level="INFO">Typing text '1525458596' into text field '//*[@name='referenceNumberBase']'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220707 14:16:16.953" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323DA8+802216]
+	Ordinal0 [0x0030C680+706176]
+	Ordinal0 [0x0036F499+1111193]
+	Ordinal0 [0x0037C6F2+1165042]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</msg>
+<status status="FAIL" starttime="20220707 14:16:16.742" endtime="20220707 14:16:16.961"/>
+</kw>
+<msg timestamp="20220707 14:16:16.961" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323DA8+802216]
+	Ordinal0 [0x0030C680+706176]
+	Ordinal0 [0x0036F499+1111193]
+	Ordinal0 [0x0037C6F2+1165042]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</msg>
+<msg timestamp="20220707 14:16:17.325" level="FAIL">Element with locator '//*[@name='referenceNumberBase']' not found.</msg>
+<status status="FAIL" starttime="20220707 14:16:07.765" endtime="20220707 14:16:17.326"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>${reference_number_dropdown}</arg>
+<arg>2</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="NOT RUN" starttime="20220707 14:16:17.327" endtime="20220707 14:16:17.327"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220707 14:16:17.327" endtime="20220707 14:16:17.327"/>
+</kw>
+<kw name="Click Element If Visible" library="Resources">
+<arg>${close_chatbox}</arg>
+<status status="NOT RUN" starttime="20220707 14:16:17.327" endtime="20220707 14:16:17.327"/>
+</kw>
+<kw name="Click Element When Visible" library="Resources">
+<arg>${kansainvalinen_viitenumero}</arg>
+<status status="NOT RUN" starttime="20220707 14:16:17.327" endtime="20220707 14:16:17.327"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220707 14:16:17.327" endtime="20220707 14:16:17.328"/>
+</kw>
+<kw name="Click Element If Visible" library="Resources">
+<arg>${close_chatbox}</arg>
+<status status="NOT RUN" starttime="20220707 14:16:17.328" endtime="20220707 14:16:17.328"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220707 14:16:17.328" endtime="20220707 14:16:17.328"/>
+</kw>
+<kw name="Click Element When Visible" library="Resources">
+<arg>${laske}</arg>
+<status status="NOT RUN" starttime="20220707 14:16:17.328" endtime="20220707 14:16:17.329"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:16:07.764" endtime="20220707 14:16:17.331"/>
+</kw>
+<kw name="Get Provided Reference Number as List" library="Resources">
+<status status="NOT RUN" starttime="20220707 14:16:17.332" endtime="20220707 14:16:17.332"/>
+</kw>
+<kw name="Configure Reference Number Format as Described" library="Resources">
+<status status="NOT RUN" starttime="20220707 14:16:17.332" endtime="20220707 14:16:17.332"/>
+</kw>
+<kw name="Verify Reference Number from List" library="Resources">
+<status status="NOT RUN" starttime="20220707 14:16:17.332" endtime="20220707 14:16:17.332"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:16:07.764" endtime="20220707 14:16:17.333"/>
+</kw>
+<kw name="Teardown" library="Resources" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 14:16:22.349" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220707 14:16:17.337" endtime="20220707 14:16:22.349"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220707 14:16:22.350" endtime="20220707 14:16:24.552"/>
+</kw>
+<status status="PASS" starttime="20220707 14:16:17.334" endtime="20220707 14:16:24.552"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:15:53.951" endtime="20220707 14:16:24.553">Element with locator '//*[@name='referenceNumberBase']' not found.</status>
+</test>
+<test id="s1-t4" name="Implement Positive Scenerios">
+<kw name="Open Browser and Setup" library="Resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220707 14:16:24.559" level="INFO">Opening browser 'Chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220707 14:16:33.579" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323C70+801904]
+	Ordinal0 [0x00318942+756034]
+	Ordinal0 [0x00319178+758136]
+	Ordinal0 [0x0031AA32+764466]
+	Ordinal0 [0x00314359+738137]
+	Ordinal0 [0x00325100+807168]
+	Ordinal0 [0x0037C732+1165106]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</msg>
+<status status="FAIL" starttime="20220707 14:16:28.847" endtime="20220707 14:16:33.580"/>
+</kw>
+<msg timestamp="20220707 14:16:33.581" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323C70+801904]
+	Ordinal0 [0x00318942+756034]
+	Ordinal0 [0x00319178+758136]
+	Ordinal0 [0x0031AA32+764466]
+	Ordinal0 [0x00314359+738137]
+	Ordinal0 [0x00325100+807168]
+	Ordinal0 [0x0037C732+1165106]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</msg>
+<msg timestamp="20220707 14:16:33.603" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: unable to send message to renderer
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323DA8+802216]
+	Ordinal0 [0x00314E00+740864]
+	Ordinal0 [0x00315208+741896]
+	Ordinal0 [0x003201F0+786928]
+	Ordinal0 [0x0031652D+746797]
+	Ordinal0 [0x00317105+749829]
+	Ordinal0 [0x0031673A+747322]
+	Ordinal0 [0x00315D1F+744735]
+	Ordinal0 [0x00314C08+740360]
+	Ordinal0 [0x003150DD+741597]
+	Ordinal0 [0x00325574+808308]
+	Ordinal0 [0x0037D5FD+1168893]
+	Ordinal0 [0x0036CB0C+1100556]
+	Ordinal0 [0x0037CF52+1167186]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</msg>
+<status status="FAIL" starttime="20220707 14:16:24.559" endtime="20220707 14:16:33.604"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220707 14:16:33.606" endtime="20220707 14:16:33.606"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>${time_out}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="NOT RUN" starttime="20220707 14:16:33.607" endtime="20220707 14:16:33.607"/>
+</kw>
+<kw name="Click Element When Visible" library="Resources">
+<arg>${accept_cookies}</arg>
+<status status="NOT RUN" starttime="20220707 14:16:33.608" endtime="20220707 14:16:33.609"/>
+</kw>
+<kw name="Click Element If Visible" library="Resources">
+<arg>${close_chatbox}</arg>
+<status status="NOT RUN" starttime="20220707 14:16:33.609" endtime="20220707 14:16:33.610"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:16:24.558" endtime="20220707 14:16:33.613"/>
+</kw>
+<kw name="Teardown" library="Resources" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 14:16:38.622" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220707 14:16:33.620" endtime="20220707 14:16:38.622"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220707 14:16:38.623" endtime="20220707 14:16:40.733"/>
+</kw>
+<status status="PASS" starttime="20220707 14:16:33.618" endtime="20220707 14:16:40.733"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:16:24.555" endtime="20220707 14:16:40.735">Setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: unable to send message to renderer
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323DA8+802216]
+	Ordinal0 [0x00314E00+740864]
+	Ordinal0 [0x00315208+741896]
+	Ordinal0 [0x003201F0+786928]
+	Ordinal0 [0x0031652D+746797]
+	Ordinal0 [0x00317105+749829]
+	Ordinal0 [0x0031673A+747322]
+	Ordinal0 [0x00315D1F+744735]
+	Ordinal0 [0x00314C08+740360]
+	Ordinal0 [0x003150DD+741597]
+	Ordinal0 [0x00325574+808308]
+	Ordinal0 [0x0037D5FD+1168893]
+	Ordinal0 [0x0036CB0C+1100556]
+	Ordinal0 [0x0037CF52+1167186]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</status>
+</test>
+<test id="s1-t5" name="Implement Positive Scenerios">
+<kw name="Open Browser and Setup" library="Resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220707 14:16:40.746" level="INFO">Opening browser 'Chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<status status="PASS" starttime="20220707 14:16:40.746" endtime="20220707 14:16:44.487"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220707 14:16:45.113" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323DA8+802216]
+	Ordinal0 [0x0030C680+706176]
+	Ordinal0 [0x0036F499+1111193]
+	Ordinal0 [0x0037C6F2+1165042]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</msg>
+<status status="FAIL" starttime="20220707 14:16:45.037" endtime="20220707 14:16:45.113"/>
+</kw>
+<msg timestamp="20220707 14:16:45.114" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323DA8+802216]
+	Ordinal0 [0x0030C680+706176]
+	Ordinal0 [0x0036F499+1111193]
+	Ordinal0 [0x0037C6F2+1165042]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</msg>
+<msg timestamp="20220707 14:16:45.241" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323DA8+802216]
+	Ordinal0 [0x0030C680+706176]
+	Ordinal0 [0x0036F499+1111193]
+	Ordinal0 [0x0037C6F2+1165042]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</msg>
+<status status="FAIL" starttime="20220707 14:16:44.488" endtime="20220707 14:16:45.242"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>${time_out}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="NOT RUN" starttime="20220707 14:16:45.244" endtime="20220707 14:16:45.244"/>
+</kw>
+<kw name="Click Element When Visible" library="Resources">
+<arg>${accept_cookies}</arg>
+<status status="NOT RUN" starttime="20220707 14:16:45.245" endtime="20220707 14:16:45.245"/>
+</kw>
+<kw name="Click Element If Visible" library="Resources">
+<arg>${close_chatbox}</arg>
+<status status="NOT RUN" starttime="20220707 14:16:45.245" endtime="20220707 14:16:45.246"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:16:40.745" endtime="20220707 14:16:45.247"/>
+</kw>
+<kw name="Teardown" library="Resources" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 14:16:50.285" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220707 14:16:45.271" endtime="20220707 14:16:50.286"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220707 14:16:50.287" endtime="20220707 14:16:52.402"/>
+</kw>
+<status status="PASS" starttime="20220707 14:16:45.269" endtime="20220707 14:16:52.402"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:16:40.740" endtime="20220707 14:16:52.403">Setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323DA8+802216]
+	Ordinal0 [0x0030C680+706176]
+	Ordinal0 [0x0036F499+1111193]
+	Ordinal0 [0x0037C6F2+1165042]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</status>
+</test>
+<test id="s1-t6" name="Implement Positive Scenerios">
+<kw name="Open Browser and Setup" library="Resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220707 14:16:52.413" level="INFO">Opening browser 'Chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220707 14:16:58.056" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20220707 14:16:58.055" endtime="20220707 14:16:58.056"/>
+</kw>
+<msg timestamp="20220707 14:16:58.069" level="FAIL">SessionNotCreatedException: Message: session not created
+from disconnected: unable to send message to renderer
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323DA8+802216]
+	Ordinal0 [0x00314E00+740864]
+	Ordinal0 [0x003150DD+741597]
+	Ordinal0 [0x00314835+739381]
+	Ordinal0 [0x003100F4+721140]
+	Ordinal0 [0x003147E5+739301]
+	Ordinal0 [0x00314570+738672]
+	Ordinal0 [0x003142B9+737977]
+	Ordinal0 [0x00325100+807168]
+	Ordinal0 [0x00372809+1124361]
+	Ordinal0 [0x003713CA+1119178]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</msg>
+<status status="FAIL" starttime="20220707 14:16:52.413" endtime="20220707 14:16:58.069"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220707 14:16:58.070" endtime="20220707 14:16:58.070"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>${time_out}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="NOT RUN" starttime="20220707 14:16:58.070" endtime="20220707 14:16:58.070"/>
+</kw>
+<kw name="Click Element When Visible" library="Resources">
+<arg>${accept_cookies}</arg>
+<status status="NOT RUN" starttime="20220707 14:16:58.070" endtime="20220707 14:16:58.070"/>
+</kw>
+<kw name="Click Element If Visible" library="Resources">
+<arg>${close_chatbox}</arg>
+<status status="NOT RUN" starttime="20220707 14:16:58.071" endtime="20220707 14:16:58.071"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:16:52.412" endtime="20220707 14:16:58.072"/>
+</kw>
+<kw name="Teardown" library="Resources" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 14:17:03.081" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220707 14:16:58.076" endtime="20220707 14:17:03.081"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220707 14:17:03.081" endtime="20220707 14:17:03.082"/>
+</kw>
+<status status="PASS" starttime="20220707 14:16:58.074" endtime="20220707 14:17:03.082"/>
+</kw>
+<status status="FAIL" starttime="20220707 14:16:52.409" endtime="20220707 14:17:03.083">Setup failed:
+SessionNotCreatedException: Message: session not created
+from disconnected: unable to send message to renderer
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323DA8+802216]
+	Ordinal0 [0x00314E00+740864]
+	Ordinal0 [0x003150DD+741597]
+	Ordinal0 [0x00314835+739381]
+	Ordinal0 [0x003100F4+721140]
+	Ordinal0 [0x003147E5+739301]
+	Ordinal0 [0x00314570+738672]
+	Ordinal0 [0x003142B9+737977]
+	Ordinal0 [0x00325100+807168]
+	Ordinal0 [0x00372809+1124361]
+	Ordinal0 [0x003713CA+1119178]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</status>
+</test>
+<status status="FAIL" starttime="20220707 14:14:46.163" endtime="20220707 14:17:03.093"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="6" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="6" skip="0" id="s1" name="PositiveScenerios">PositiveScenerios</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220707 14:15:23.457" level="WARN">Multiple test cases with name 'Implement Positive Scenerios' executed in test suite 'PositiveScenerios'.</msg>
+<msg timestamp="20220707 14:15:53.950" level="WARN">Multiple test cases with name 'Implement Positive Scenerios' executed in test suite 'PositiveScenerios'.</msg>
+<msg timestamp="20220707 14:16:16.961" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323DA8+802216]
+	Ordinal0 [0x0030C680+706176]
+	Ordinal0 [0x0036F499+1111193]
+	Ordinal0 [0x0037C6F2+1165042]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</msg>
+<msg timestamp="20220707 14:16:24.555" level="WARN">Multiple test cases with name 'Implement Positive Scenerios' executed in test suite 'PositiveScenerios'.</msg>
+<msg timestamp="20220707 14:16:33.581" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323C70+801904]
+	Ordinal0 [0x00318942+756034]
+	Ordinal0 [0x00319178+758136]
+	Ordinal0 [0x0031AA32+764466]
+	Ordinal0 [0x00314359+738137]
+	Ordinal0 [0x00325100+807168]
+	Ordinal0 [0x0037C732+1165106]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</msg>
+<msg timestamp="20220707 14:16:40.739" level="WARN">Multiple test cases with name 'Implement Positive Scenerios' executed in test suite 'PositiveScenerios'.</msg>
+<msg timestamp="20220707 14:16:45.114" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x004756B3+2184883]
+	Ordinal0 [0x0040E5F1+1762801]
+	Ordinal0 [0x00323DA8+802216]
+	Ordinal0 [0x0030C680+706176]
+	Ordinal0 [0x0036F499+1111193]
+	Ordinal0 [0x0037C6F2+1165042]
+	Ordinal0 [0x0036C926+1100070]
+	Ordinal0 [0x00346EA0+945824]
+	Ordinal0 [0x00347D96+949654]
+	GetHandleVerifier [0x00714192+2704034]
+	GetHandleVerifier [0x0070687D+2648461]
+	GetHandleVerifier [0x0050119A+529066]
+	GetHandleVerifier [0x00500006+524566]
+	Ordinal0 [0x00414F2B+1789739]
+	Ordinal0 [0x00419978+1808760]
+	Ordinal0 [0x00419A65+1808997]
+	Ordinal0 [0x00422A01+1845761]
+	BaseThreadInitThunk [0x7535FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77117A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77117A6E+238]
+</msg>
+<msg timestamp="20220707 14:16:52.408" level="WARN">Multiple test cases with name 'Implement Positive Scenerios' executed in test suite 'PositiveScenerios'.</msg>
+</errors>
+</robot>
